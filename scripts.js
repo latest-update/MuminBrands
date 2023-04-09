@@ -1,3 +1,5 @@
+let currentlyPlaying = -1;
+
 document.addEventListener('DOMContentLoaded', () => {
     fetch('songs.json')
         .then(response => response.json())
@@ -36,7 +38,23 @@ function displaySongs(songs) {
     });
 
     window.playSong = (index) => {
-        audioPlayer.src = songs[index].url;
-        audioPlayer.play();
+        const audioPlayer = document.getElementById('audio-player');
+        const allItems = document.querySelectorAll('.item');
+
+        if (index === currentlyPlaying) {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+            } else {
+                audioPlayer.pause();
+            }
+        } else {
+            if (currentlyPlaying !== -1) {
+                allItems[currentlyPlaying].classList.remove('active');
+            }
+            currentlyPlaying = index;
+            audioPlayer.src = songs[currentlyPlaying].url;
+            audioPlayer.play();
+            allItems[currentlyPlaying].classList.add('active');
+        }
     };
 }

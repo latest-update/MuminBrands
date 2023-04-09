@@ -102,6 +102,10 @@ footer {
     text-transform: uppercase;
 }
 
+.item.active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 @media screen and (max-width: 600px) {
     .ui.container {
         padding: 10px;
