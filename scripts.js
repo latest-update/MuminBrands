@@ -14,7 +14,10 @@ function toggleTheme() {
 
 function updateTime() {
     const currentTime = new Date();
-    const formattedTime = currentTime.toLocaleTimeString();
+    const hours = String(currentTime.getHours()).padStart(2, '0');
+    const minutes = String(currentTime.getMinutes()).padStart(2, '0');
+    const seconds = String(currentTime.getSeconds()).padStart(2, '0');
+    const formattedTime = `${hours}:${minutes}:${seconds}`;
     document.getElementById('current-time').innerText = formattedTime;
 }
 
