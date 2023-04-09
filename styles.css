@@ -85,10 +85,6 @@ header {
     margin-top: 30px;
 }
 
-#music-list a {
-    font-size: 18px;
-}
-
 footer {
     display: flex;
     justify-content: flex-start;
