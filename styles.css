@@ -6,10 +6,12 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    color: #000;
 }
 
 body.dark {
     background-image: url('assets/dark.png');
+    color: #fff;
 }
 
 header {
@@ -81,6 +83,10 @@ header {
 #music-list {
     overflow-y: auto;
     margin-top: 30px;
+}
+
+#music-list a {
+    font-size: 18px;
 }
 
 footer {
